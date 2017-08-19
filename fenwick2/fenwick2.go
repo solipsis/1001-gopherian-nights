@@ -1,7 +1,7 @@
 // Package fenwick provides a simple fenwick tree for
 // conducting range sum queries on positive values in O(log(n)) time
 // this implementation has been upgraded to support negative values
-package fenwick
+package fenwick2
 
 // Fenwick tree represented by an int array and an offset
 // that is used to support negative numbers and ranges outside of 0 to n
@@ -16,11 +16,11 @@ func NewFenwick(min, max int) Fenwick {
 	f := Fenwick{
 		tree: make([]int, max-min+2),
 	}
-	var offset = 1
-	if min < 0 {
-		offset = min + 1
-	} else if min > 0 {
+	var offset = 0
+	if min < 1 {
 		offset = (-min) + 1
+	} else if min > 1 {
+		offset = -min + 1
 	}
 	f.offset = offset
 
