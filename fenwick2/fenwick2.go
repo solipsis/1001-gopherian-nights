@@ -1,6 +1,7 @@
-// Package fenwick provides a simple fenwick tree for
-// conducting range sum queries on positive values in O(log(n)) time
+// Package fenwick2 provides an improved fenwick tree for
+// conducting range sum queries in O(log(n)) time
 // this implementation has been upgraded to support negative values
+// and ranges other than 1 to n
 package fenwick2
 
 // Fenwick tree represented by an int array and an offset
